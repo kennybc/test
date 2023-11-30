@@ -1,0 +1,31 @@
+.balloon {
+  animation: balloon-swing 5s ease-in-out infinite;
+}
+.balloon-wrap {
+  top: 100%;
+  animation: balloon-up 20s ease-in-out infinite;
+}
+@keyframes balloon-up {
+  0% {
+    top: 100%;
+  }
+  100% {
+    top: -50%;
+    transform: translateX(10vw);
+  }
+}
+@keyframes balloon-swing {
+  0%,
+  100% {
+    transform: translateY(0) rotate(-4deg);
+  }
+  20% {
+    transform: translateY(-2px) rotate(1deg) rotate3d(0, 1, 0, -5deg);
+  }
+  50% {
+    transform: translateY(20px) rotate(4deg) rotate3d(0, 1, 0, 19deg);
+  }
+  80% {
+    transform: translateY(18px) rotate(-2deg);
+  }
+}

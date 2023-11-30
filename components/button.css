@@ -1,0 +1,42 @@
+.btn {
+    border-top-color: #FC3B6E;
+    border-right-color: #D1315C;
+    border-bottom-color: #B22B4F;
+    border-left-color: #D1315C;
+    border-style: solid;
+    border-width: 3px;
+    background-color: transparent;
+    position: relative;
+    text-transform: uppercase;
+    padding: 8px 25px 8px;
+    background-image: linear-gradient(#B22B4F 0%,#FC3B6E);
+    box-shadow: 0px 4px 2px rgb(0 0 0 / 30%);
+    text-shadow: 1px 1px 1px rgb(0 0 0 / 35%);
+    cursor: pointer;
+    transition: box-shadow .3s, background-image .3s;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.5rem;
+    border-radius: .5rem;
+    display: inline-block;
+    margin: 5px;
+    -webkit-tap-highlight-color: transparent;
+}
+.btn:before {
+    background-image: none;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    bottom: 0px;
+    right: 0px;
+    width: 100%;
+    box-shadow: 0px 2px 3px 1px #941134;
+    content: "";
+    border-radius: 0.35rem;
+}
+.btn:hover {
+box-shadow: 0px 2px 1px rgb(0 0 0 / 30%);
+background-image: linear-gradient(#B22B4F 15%,#FC3B6E);
+transition: box-shadow .2s;
+}
