@@ -16,9 +16,6 @@ const SaveGamePlay = () => {
     setTimeout(() => playBellSound(), 1800);
     setTimeout(() => playTransitionSound(), 300);
   };
-  useEffect(() => {
-    soundTimeOut();
-  }, []);
   const router = useRouter();
   const { leaders, points, place, name, setPlace, setName } = useGame();
   const onClickDone = async (to: string) => {
@@ -26,7 +23,9 @@ const SaveGamePlay = () => {
     setName(null);
     router.push(to);
   };
-  let board5Leaders = [...leaders];
+  useEffect(() => {
+    soundTimeOut();
+  }, []);
   return (
     <div
       className={`content save-game`}
@@ -138,7 +137,7 @@ const SaveGamePlay = () => {
             }}
           >
             <h1>LEADERBOARD</h1>
-            {board5Leaders
+            {leaders
               .filter((l, i) => i <= place + 4 && i >= place - 3)
               .slice(0, 5)
               .map((leader, index) => (
