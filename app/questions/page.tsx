@@ -9,19 +9,9 @@ import "../../components/questions.css";
 import BlurryCloud from "../../components/BlurryCloud";
 import { ReactSVG } from "react-svg";
 import Answers from "../../components/Answers";
-import Lottie from "react-lottie";
-import animationData from "../../lotties/congratulations.json";
 import useSound from "../../components/Sound";
 
 const Questions = memo(() => {
-  const defaultAnimOptions = {
-    loop: true,
-    autoplay: false,
-    animationData: animationData,
-    rendererSettings: {
-      preserveAspectRatio: "xMidYMid slice",
-    },
-  };
   const starPointsIcon = useMemo(
     () => (
       <ReactSVG
@@ -107,21 +97,7 @@ const Questions = memo(() => {
             position: "fixed",
             zIndex: 0,
           }}
-        >
-          <Lottie
-            options={defaultAnimOptions}
-            height={"100%"}
-            width={"100%"}
-            isStopped={
-              !isPlaying &&
-              answers?.length > 0 &&
-              answers?.length === questions?.length &&
-              incorrectQuestionsCount === 0
-                ? false
-                : true
-            }
-          />
-        </div>
+        ></div>
         <div className="two-columns">
           <div
             className="left-column"

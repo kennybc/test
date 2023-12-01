@@ -4,11 +4,8 @@
 import { useRouter } from "next/navigation";
 import useGame from "../../hooks/game";
 import { ReactSVG } from "react-svg";
-import ButtonLink from "../../components/ButtonLink";
 import Button from "../../components/Button";
 import LeaderBoardRow from "../../components/LeaderBoardRow";
-import Lottie from "react-lottie";
-import animationData from "../../lotties/confetti.json";
 import useSound from "@/components/Sound";
 import { useEffect } from "react";
 
@@ -29,14 +26,6 @@ const SaveGamePlay = () => {
     setName(null);
     router.push(to);
   };
-  const defaultAnimOptions = {
-    loop: true,
-    autoplay: true,
-    animationData: animationData,
-    rendererSettings: {
-      preserveAspectRatio: "xMidYMid slice",
-    },
-  };
   let board5Leaders = [...leaders];
   return (
     <div
@@ -55,9 +44,7 @@ const SaveGamePlay = () => {
           zIndex: -1,
           filter: "blur(3px)",
         }}
-      >
-        <Lottie options={defaultAnimOptions} height={"100%"} width={"100%"} />
-      </div>
+      ></div>
       <div className="two-columns">
         <div
           className="left-column"
