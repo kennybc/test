@@ -4,19 +4,9 @@ import { useState } from "react";
 import useGame from "../../hooks/game";
 import { ReactSVG } from "react-svg";
 import ButtonLink from "../../components/ButtonLink";
-import Lottie from "react-lottie";
-import animationData from "../../lotties/congratulations.json";
 
 const Finish = () => {
   const [anim, setAnim] = useState(true);
-  const defaultOptions = {
-    loop: true,
-    autoplay: true,
-    animationData: animationData,
-    rendererSettings: {
-      preserveAspectRatio: "xMidYMid slice",
-    },
-  };
 
   const { name, place, points } = useGame();
 
@@ -31,14 +21,7 @@ const Finish = () => {
             position: "fixed",
             zIndex: 0,
           }}
-        >
-          <Lottie
-            options={defaultOptions}
-            height={"100%"}
-            width={"100%"}
-            isStopped={anim}
-          />
-        </div>
+        ></div>
 
         <div className="two-columns">
           <div
